@@ -1,9 +1,9 @@
-#include<iostream>
-#include<ctime>
-using namespace std;
+#include<iostream> 
+#include<ctime>            //This header file contains definitions of functions to get and manipulate date and time information
+using namespace std;       //The interface of C++ standard
 int main()
 {
-	srand(time(NULL));
+	srand(time(NULL));  //The time() function with a parameter NULL, time(NULL), returns the current calendar time
 	const int size = 10;
 	int arr[size];
 	bool proverca;
@@ -11,10 +11,10 @@ int main()
 	for (int i = 0; i < size; )
 	{
 		proverca = false;
-		int randomnum = rand()% 1000;
+		int randomnum = rand()% 1000; //We randomly generate a number from 1 to 1000
 		for (int j = 0; j <i ; j++)
 		{
-			if(arr[j]==randomnum)
+			if(arr[j]==randomnum) //Check if there is a similar number in the array
 			{
 				proverca = true;
 				break;
@@ -22,7 +22,7 @@ int main()
 			
 			
 		}
-		if (!proverca)
+		if (!proverca) //If a similar number is not found, assign this number to an array
 		{
 			arr[i] = randomnum;
 			i++;
@@ -31,9 +31,9 @@ int main()
 	}
 	
 	
-	int minvalue = arr[0];
+	int minvalue = arr[0]; //Point the first element to a variable minvalue
 	
-	for (int i = 1; i < size; i++)
+	for (int i = 1; i < size; i++)//Loop assign to variable, minvalue is the minimum number in the array
 	{
 		if (arr[i] < minvalue)
 			minvalue = arr[i];
